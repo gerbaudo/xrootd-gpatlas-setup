@@ -1,0 +1,16 @@
+#  This file should be placed in /etc/xrootd/auth_file  and readable by xrootd daemons
+
+# This means that all the users have read access to the datasets
+u * /atlas lr
+
+# This means that all the users have full access to their private dirs
+u = /atlas/local/@=/ a
+
+# This means that this privileged user can do everything
+# You need at least one user like that, in order to create the
+# private dir for each user willing to store his data in the facility
+u root /atlas a
+u xrootd /atlas a
+# u <some other user> /atlas a
+
+
